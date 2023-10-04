@@ -1,0 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        //This Hashmap stores numbers and there indexes.
+        Map<Integer, Integer> numMap = new HashMap<>();
+
+        for(int i =0; i < nums.length; i++)
+        {
+            // complement is the number which added to i = target
+            int complement = target - nums[i];
+            //we then search if the complement exists within the Map
+            if(numMap.containsKey(complement))
+            {
+                return new int[]{numMap.get(complement), i};
+            }
+            numMap.put(nums[i], i);
+        }
+        return new int[0];
+    }
+}
