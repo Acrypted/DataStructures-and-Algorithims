@@ -1,0 +1,22 @@
+class Solution {
+    public int maximumNumberOfStringPairs(String[] words) {
+        int count=0;
+        for(int i =0; i < words.length; i++)
+        {
+            if(words[i] == null) continue;
+            for(int k=i+1; k <words.length; k++)
+            {
+                if(words[k] == null) continue;
+                String rev = new StringBuilder(words[k]).reverse().toString();
+                if(words[i].equals(rev))
+                {
+                    count++;
+                    words[i]=null;
+                    words[k]=null;
+                    break;
+                }
+            }
+        }
+        return count;
+    }
+}
