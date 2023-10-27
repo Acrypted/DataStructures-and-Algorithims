@@ -1,0 +1,19 @@
+class Solution {
+    public String longestPalindrome(String s) {
+        
+        String pal= "";
+
+        for(int i =0; i < s.length(); i++)
+        {
+            pal+= s.charAt(i);
+            isPalindrome = false;
+            for(int j = 0; j < pal.length(); j++)
+            {
+                if(pal.length() <1)
+                {
+                    return true;
+                }
+            }
+        }
+    }
+}
